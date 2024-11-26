@@ -12,7 +12,7 @@
 
 <body class="bg-black"
     style="background-image: url(../images/Untitled-1.png); background-repeat: no-repeat; background-size: cover; background-position: center;">
-    <!-- Header -->
+
     <header class="h-14 bg-gradient-to-b from-neutral-900 to-neutral-800 flex items-center justify-center">
         <h1 class="text-white text-lg md:text-2xl font-bold">FUT Ultimate Team</h1>
     </header>
@@ -21,76 +21,691 @@
 
         <div class="relative mt-5 h-[655px] max-h-screen w-full md:w-[60%]">
             <img src="../images/téléchargement.svg" alt="Formation Background" class="object-cover w-full h-full">
-            <div class="absolute top-0 w-full h-full flex flex-col gap-10">
+            <div class="absolute bottom-5 w-full h-full flex flex-col ">
                 
                 <div class="flex justify-center gap-10">
-                    <button style="background-image: url(../images/card2.png); background-repeat: no-repeat; background-size: contain;"
-                        class="h-36 md:h-32 sm:h-24 aspect-[13/19] relative top-5 hover:shadow-2xl hover:shadow-cyan-500">
-                        <div class="text-gray-50 text-center">RW</div>
-                    </button>
-                    <button style="background-image: url(../images/card2.png); background-repeat: no-repeat; background-size: contain;"
-                        class="h-36 md:h-32 sm:h-24 aspect-[13/19] hover:shadow-2xl hover:shadow-cyan-500">
-                        <div class="text-gray-50 text-center relative bottom-5">ST</div>
-                    </button>
-                    <button style="background-image: url(../images/card2.png); background-repeat: no-repeat; background-size: contain;"
-                        class="h-36 md:h-32 sm:h-24 aspect-[13/19] relative top-5 hover:shadow-2xl hover:shadow-cyan-500">
-                        <div class="text-gray-50 text-center">LW</div>
-                    </button>
+                    <div class="relative w-40  hover:[filter:drop-shadow(0px_0px_30px#F7E7C3)] " onclick="cardPlayers(event)">
+                        <img src="../images/badge_gold.webp" alt="" class="object-contain h-[200px] ">
+                        <div class="absolute w-[50%] top-12 left-8"><img src="../assets/players/messi.webp" alt=""></div>
+                        <div class="flex flex-col items-center text-sm justify-center absolute top-10 left-5">
+                            <p>--</p>
+                            <p>LW</p>
+                        </div>
+                        <div class=" flex flex-col absolute bottom-[30px] left-4">
+                            <div class="text-center"><p>L.messi</p></div>
+                            <div class="flex gap-1 justify-center items-center w-[112px] text-[8px]">
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PAC</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>SHO</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PAS</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>DRI</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>DEF</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PHY</p>
+                                    <p>--</p>
+                                </div>
+                            </div>
+                            <div class="flex ">
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex ">
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative w-40 hover:[filter:drop-shadow(0px_0px_30px#F7E7C3)]" onclick="cardPlayers(event)"> 
+                        <img src="../images/badge_gold.webp" alt="" class="object-contain h-[200px] ">
+                        <div class="absolute w-[50%] top-12 left-8"><img src="../assets/players/messi.webp" alt="" class=""></div>
+                        <div class="flex flex-col items-center text-sm justify-center absolute top-10 left-5">
+                            <p>--</p>
+                            <p>ST</p>
+                        </div>
+                        <div class=" flex flex-col absolute bottom-[30px] left-4">
+                            <div class="text-center"><p>L.messi</p></div>
+                            <div class="flex gap-1 justify-center items-center w-[112px] text-[8px]">
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PAC</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>SHO</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PAS</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>DRI</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>DEF</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PHY</p>
+                                    <p>--</p>
+                                </div>
+                            </div>
+                            <div class="flex ">
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex ">
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative w-40  hover:[filter:drop-shadow(0px_0px_30px#F7E7C3)] " onclick="cardPlayers(event)">
+                        <img src="../images/badge_gold.webp" alt="" class="object-contain h-[200px] ">
+                        <div class="absolute w-[50%] top-12 left-8"><img src="../assets/players/messi.webp" alt=""></div>
+                        <div class="flex flex-col items-center text-sm justify-center absolute top-10 left-5">
+                            <p>--</p>
+                            <p>RW</p>
+                        </div>
+                        <div class=" flex flex-col absolute bottom-[30px] left-4">
+                            <div class="text-center"><p>L.messi</p></div>
+                            <div class="flex gap-1 justify-center items-center w-[112px] text-[8px]">
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PAC</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>SHO</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PAS</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>DRI</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>DEF</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PHY</p>
+                                    <p>--</p>
+                                </div>
+                            </div>
+                            <div class="flex ">
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex ">
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="flex justify-around">
-                    <button style="background-image: url(../images/card2.png); background-repeat: no-repeat; background-size: contain;"
-                        class="h-36 md:h-32 sm:h-24 aspect-[13/19] hover:shadow-2xl hover:shadow-cyan-500">
-                        <div class="text-gray-50 text-center">CM</div>
-                    </button>
-                    <button style="background-image: url(../images/card2.png); background-repeat: no-repeat; background-size: contain;"
-                        class="h-36 md:h-32 sm:h-24 aspect-[13/19] relative top-8 hover:shadow-2xl hover:shadow-cyan-500">
-                        <div class="text-gray-50 text-center">CM</div>
-                    </button>
-                    <button style="background-image: url(../images/card2.png); background-repeat: no-repeat; background-size: contain;"
-                        class="h-36 md:h-32 sm:h-24 aspect-[13/19] hover:shadow-2xl hover:shadow-cyan-500">
-                        <div class="text-gray-50 text-center">CM</div>
-                    </button>
+                    <div class="relative w-40  hover:[filter:drop-shadow(0px_0px_30px#F7E7C3)] " onclick="cardPlayers(event)">
+                        <img src="../images/badge_gold.webp" alt="" class="object-contain h-[200px] ">
+                        <div class="absolute w-[50%] top-12 left-8"><img src="../assets/players/messi.webp" alt=""></div>
+                        <div class="flex flex-col items-center text-sm justify-center absolute top-10 left-5">
+                            <p>--</p>
+                            <p>CM</p>
+                        </div>
+                        <div class=" flex flex-col absolute bottom-[30px] left-4">
+                            <div class="text-center"><p>L.messi</p></div>
+                            <div class="flex gap-1 justify-center items-center w-[112px] text-[8px]">
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PAC</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>SHO</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PAS</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>DRI</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>DEF</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PHY</p>
+                                    <p>--</p>
+                                </div>
+                            </div>
+                            <div class="flex ">
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex ">
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative w-40  hover:[filter:drop-shadow(0px_0px_30px#F7E7C3)] " onclick="cardPlayers(event)">
+                        <img src="../images/badge_gold.webp" alt="" class="object-contain h-[200px] ">
+                        <div class="absolute w-[50%] top-12 left-8"><img src="../assets/players/messi.webp" alt=""></div>
+                        <div class="flex flex-col items-center text-sm justify-center absolute top-10 left-5">
+                            <p>--</p>
+                            <p>CM</p>
+                        </div>
+                        <div class=" flex flex-col absolute bottom-[30px] left-4">
+                            <div class="text-center"><p>L.messi</p></div>
+                            <div class="flex gap-1 justify-center items-center w-[112px] text-[8px]">
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PAC</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>SHO</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PAS</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>DRI</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>DEF</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PHY</p>
+                                    <p>--</p>
+                                </div>
+                            </div>
+                            <div class="flex ">
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex ">
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative w-40  hover:[filter:drop-shadow(0px_0px_30px#F7E7C3)] " onclick="cardPlayers(event)">
+                        <img src="../images/badge_gold.webp" alt="" class="object-contain h-[200px] ">
+                        <div class="absolute w-[50%] top-12 left-8"><img src="../assets/players/messi.webp" alt=""></div>
+                        <div class="flex flex-col items-center text-sm justify-center absolute top-10 left-5">
+                            <p>--</p>
+                            <p>CM</p>
+                        </div>
+                        <div class=" flex flex-col absolute bottom-[30px] left-4">
+                            <div class="text-center"><p>L.messi</p></div>
+                            <div class="flex gap-1 justify-center items-center w-[112px] text-[8px]">
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PAC</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>SHO</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PAS</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>DRI</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>DEF</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PHY</p>
+                                    <p>--</p>
+                                </div>
+                            </div>
+                            <div class="flex ">
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex ">
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="flex justify-around">
-                    <button style="background-image: url(../images/card2.png); background-repeat: no-repeat; background-size: contain;"
-                        class="h-36 md:h-32 sm:h-24 aspect-[13/19] hover:shadow-2xl hover:shadow-cyan-500">
-                        <div class="text-gray-50 text-center">RB</div>
-                    </button>
-                    <button style="background-image: url(../images/card2.png); background-repeat: no-repeat; background-size: contain;"
-                        class="h-36 md:h-32 sm:h-24 aspect-[13/19] hover:shadow-2xl hover:shadow-cyan-500">
-                        <div class="text-gray-50 text-center">CB</div>
-                    </button>
-                    <button style="background-image: url(../images/card2.png); background-repeat: no-repeat; background-size: contain;"
-                        class="h-36 md:h-32 sm:h-24 aspect-[13/19] hover:shadow-2xl hover:shadow-cyan-500">
-                        <div class="text-gray-50 text-center">CB</div>
-                    </button>
-                    <button style="background-image: url(../images/card2.png); background-repeat: no-repeat; background-size: contain;"
-                        class="h-36 md:h-32 sm:h-24 aspect-[13/19] hover:shadow-2xl hover:shadow-cyan-500">
-                        <div class="text-gray-50 text-center">LB</div>
-                    </button>
+                    <div class="relative w-40  hover:[filter:drop-shadow(0px_0px_30px#F7E7C3)] " onclick="cardPlayers(event)">
+                        <img src="../images/badge_gold.webp" alt="" class="object-contain h-[200px] ">
+                        <div class="absolute w-[50%] top-12 left-8"><img src="../assets/players/messi.webp" alt=""></div>
+                        <div class="flex flex-col items-center text-sm justify-center absolute top-10 left-5">
+                            <p>--</p>
+                            <p>LB</p>
+                        </div>
+                        <div class=" flex flex-col absolute bottom-[30px] left-4">
+                            <div class="text-center"><p>L.messi</p></div>
+                            <div class="flex gap-1 justify-center items-center w-[112px] text-[8px]">
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PAC</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>SHO</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PAS</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>DRI</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>DEF</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PHY</p>
+                                    <p>--</p>
+                                </div>
+                            </div>
+                            <div class="flex ">
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex ">
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative w-40  hover:[filter:drop-shadow(0px_0px_30px#F7E7C3)] " onclick="cardPlayers(event)">
+                        <img src="../images/badge_gold.webp" alt="" class="object-contain h-[200px] ">
+                        <div class="absolute w-[50%] top-12 left-8"><img src="../assets/players/messi.webp" alt=""></div>
+                        <div class="flex flex-col items-center text-sm justify-center absolute top-10 left-5">
+                            <p>--</p>
+                            <p>CB</p>
+                        </div>
+                        <div class=" flex flex-col absolute bottom-[30px] left-4">
+                            <div class="text-center"><p>L.messi</p></div>
+                            <div class="flex gap-1 justify-center items-center w-[112px] text-[8px]">
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PAC</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>SHO</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PAS</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>DRI</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>DEF</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PHY</p>
+                                    <p>--</p>
+                                </div>
+                            </div>
+                            <div class="flex ">
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex ">
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative w-40  hover:[filter:drop-shadow(0px_0px_30px#F7E7C3)] " onclick="cardPlayers(event)">
+                        <img src="../images/badge_gold.webp" alt="" class="object-contain h-[200px] ">
+                        <div class="absolute w-[50%] top-12 left-8"><img src="../assets/players/messi.webp" alt=""></div>
+                        <div class="flex flex-col items-center text-sm justify-center absolute top-10 left-5">
+                            <p>--</p>
+                            <p>CB</p>
+                        </div>
+                        <div class=" flex flex-col absolute bottom-[30px] left-4">
+                            <div class="text-center"><p>L.messi</p></div>
+                            <div class="flex gap-1 justify-center items-center w-[112px] text-[8px]">
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PAC</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>SHO</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PAS</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>DRI</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>DEF</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PHY</p>
+                                    <p>--</p>
+                                </div>
+                            </div>
+                            <div class="flex ">
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex ">
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative w-40  hover:[filter:drop-shadow(0px_0px_30px#F7E7C3)] " onclick="cardPlayers(event)">
+                        <img src="../images/badge_gold.webp" alt="" class="object-contain h-[200px] ">
+                        <div class="absolute w-[50%] top-12 left-8"><img src="../assets/players/messi.webp" alt=""></div>
+                        <div class="flex flex-col items-center text-sm justify-center absolute top-10 left-5">
+                            <p>--</p>
+                            <p>RB</p>
+                        </div>
+                        <div class=" flex flex-col absolute bottom-[30px] left-4">
+                            <div class="text-center"><p>L.messi</p></div>
+                            <div class="flex gap-1 justify-center items-center w-[112px] text-[8px]">
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PAC</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>SHO</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PAS</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>DRI</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>DEF</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PHY</p>
+                                    <p>--</p>
+                                </div>
+                            </div>
+                            <div class="flex ">
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex ">
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                            <div>
+                                <img src="" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+                    
                 </div>
                
                 <div class="flex justify-center">
-                    <button style="background-image: url(../images/card2.png); background-repeat: no-repeat; background-size: contain;"
-                        class="h-36 md:h-32 sm:h-24 aspect-[13/19] hover:shadow-2xl hover:shadow-cyan-500">
-                        <div class="text-gray-50 text-center">GK</div>
-                    </button>
+                    <div class="relative w-40  bottom-10 hover:[filter:drop-shadow(0px_0px_25px#F7E7C3)] " onclick="cardPlayers(event)">
+                        <img src="../images/badge_gold.webp" alt="" class="object-contain h-[200px] ">
+                        <div class="absolute w-[50%] top-12 left-8"><img src="../assets/players/messi.webp" alt=""></div>
+                        <div class="flex flex-col items-center text-sm justify-center absolute top-10 left-5">
+                            <p>--</p>
+                            <p>GK</p>
+                        </div>
+                        <div class=" flex flex-col absolute bottom-[30px] left-4">
+                            <div class="text-center"><p>L.messi</p></div>
+                            <div class="flex gap-1 justify-center items-center w-[112px] text-[8px]">
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PAC</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>SHO</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PAS</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>DRI</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>DEF</p>
+                                    <p>--</p>
+                                </div>
+                                <div class="flex flex-col items-center justify-center">
+                                    <p>PHY</p>
+                                    <p>--</p>
+                                </div>
+                            </div>
+                            <div class="flex ">
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                                <div>
+                                    <img src="" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
         
-        <div class="m-5 md:w-[35%] w-full">
-            <form action=""
+        <div id="form1" class="m-5 md:w-[35%] w-full hidden">
+            <form action="" id="myForm"
                 class="sm:grid sm:grid-cols-2 md:grid md:grid-cols-2 bg-neutral-600 gap-4 p-4 rounded-xl opacity-90">
                 <p class="col-span-2 text-center text-emerald-50 font-semibold">Ajouter un joueur</p>
-                <label class="w-full text-white bg-">name<br><input type="text"class="w-full rounded-lg px-2 py-2 bg-[#333533]" required></label>
-                <label class="w-full text-white">photo<br><input type="url"class="w-full rounded-lg px-2 py-2 bg-[#333533]" required></label>
-                <label class="w-full text-white">nationality<br><input type="text"class="w-full rounded-lg px-2 py-2 bg-[#333533]" required></label>
+                <label class="w-full text-white">
+                    name<br>
+                    <input type="text" class="w-full rounded-lg px-2 py-2 bg-[#333533]" required>
+                  </label>
+                  
+                  <label class="w-full text-white">
+                    photo<br>
+                    <input type="url" class="w-full rounded-lg px-2 py-2 bg-[#333533]" required>
+                  </label>
+                  
+                  <label class="w-full text-white">
+                    nationality<br>
+                    <input type="text" class="w-full rounded-lg px-2 py-2 bg-[#333533]" required>
+                  </label>
                 <label for="" class="w-full text-white">position<br>
-                    <select name="" id=""class="w-full rounded-lg px-2 py-2 bg-[#333533]" required>
+                    <select name="" id="position"class="w-full rounded-lg px-2 py-2 bg-[#333533]" required>
                         <option value="">Choisir la position</option>
                         <option value="ST">ST</option>
                         <option value="LW">LW</option>
@@ -113,43 +728,50 @@
                 <label class="w-full text-white">defending<br><input type="number" class="w-full rounded-lg px-2 py-2 bg-[#333533]" required></label>
                 <label class="w-full text-white">physical<br><input type="number" class="w-full rounded-lg px-2 py-2 bg-[#333533]" required></label>
                 <button
-                    class="px-5 py-2 bg-[#f5cb5c] rounded-xl hover:scale-x-105 text-black col-span-2 text-center"><b>ADD</b></button>
+                type="submit" onclick="putValue(event)"
+                    class="px-5 py-2 bg-[#f5cb5c] rounded-xl hover:scale-x-105 text-black col-span-2 text-center">ADD</button>
             </form>
         </div>
     </div>
-    <div class="relative w-40">
+
+    <!-- changement  -->
+
+<div class="grid grid-cols-6 mt-20 text-center w-[80%] m-auto">
+    <p class="text-white col-span-6 text-center ">Changement</p>
+
+    <div class="relative w-40   hover:[filter:drop-shadow(0px_0px_30px#417560)]">
         <img src="../images/badge_gold.webp" alt="" class="object-contain h-[200px]">
-        <div class="absolute w-[50%] top-12 left-8"><img src="../assets/players/messi.webp" alt=""></div>
+        <div class="absolute w-[50%] top-12 left-8"><img src="../assets/players/ronaldo.webp" alt=""></div>
         <div class="flex flex-col items-center text-sm justify-center absolute top-10 left-5">
-            <p><b>95</b></p>
-            <p><b>RW</b></p>
+            <p>--</p>
+            <p>RW</p>
         </div>
         <div class=" flex flex-col absolute bottom-[33px] left-4">
-            <div class="text-center"><p>name</p></div>
+            <div class="text-center"><p>L.messi</p></div>
             <div class="flex gap-1 justify-center items-center w-[112px] text-[8px]">
-                <div>
+                <div class="flex flex-col items-center justify-center">
                     <p>PAC</p>
-                    <p>10</p>
+                    <p>-</p>
                 </div>
-                <div>
+                <div class="flex flex-col items-center justify-center">
                     <p>SHO</p>
-                    <p>10</p>
+                    <p>-</p>
                 </div>
-                <div>
+                <div class="flex flex-col items-center justify-center">
                     <p>PAS</p>
-                    <p>10</p>
+                    <p>-</p>
                 </div>
-                <div>
+                <div class="flex flex-col items-center justify-center">
                     <p>DRI</p>
-                    <p>10</p>
+                    <p>-</p>
                 </div>
-                <div>
+                <div class="flex flex-col items-center justify-center">
                     <p>DEF</p>
-                    <p>10</p>
+                    <p>-</p>
                 </div>
-                <div>
+                <div class="flex flex-col items-center justify-center">
                     <p>PHY</p>
-                    <p>10</p>
+                    <p>-</p>
                 </div>
             </div>
             <div class="flex ">
@@ -165,6 +787,247 @@
             </div>
         </div>
     </div>
+    <div class="relative w-40  hover:[filter:drop-shadow(0px_0px_30px#417560)]">
+        <img src="../images/badge_gold.webp" alt="" class="object-contain h-[200px]">
+        <div class="absolute w-[50%] top-12 left-8"><img src="../assets/players/ronaldo.webp" alt=""></div>
+        <div class="flex flex-col items-center text-sm justify-center absolute top-10 left-5">
+            <p>95</p>
+            <p>RW</p>
+        </div>
+        <div class=" flex flex-col absolute bottom-[33px] left-4">
+            <div class="text-center"><p>L.messi</p></div>
+            <div class="flex gap-1 justify-center items-center w-[112px] text-[8px]">
+                <div class="flex flex-col items-center justify-center">
+                    <p>PAC</p>
+                    <p>-</p>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <p>SHO</p>
+                    <p>-</p>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <p>PAS</p>
+                    <p>-</p>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <p>DRI</p>
+                    <p>-</p>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <p>DEF</p>
+                    <p>-</p>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <p>PHY</p>
+                    <p>-</p>
+                </div>
+            </div>
+            <div class="flex ">
+                <div>
+                    <img src="" alt="">
+                </div>
+                <div>
+                    <img src="" alt="">
+                </div>
+                <div>
+                    <img src="" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="relative w-40  hover:[filter:drop-shadow(0px_0px_30px#417560)]">
+        <img src="../images/badge_gold.webp" alt="" class="object-contain h-[200px]">
+        <div class="absolute w-[50%] top-12 left-8"><img src="../assets/players/ronaldo.webp" alt=""></div>
+        <div class="flex flex-col items-center text-sm justify-center absolute top-10 left-5">
+            <p>95</p>
+            <p>RW</p>
+        </div>
+        <div class=" flex flex-col absolute bottom-[33px] left-4">
+            <div class="text-center"><p>L.messi</p></div>
+            <div class="flex gap-1 justify-center items-center w-[112px] text-[8px]">
+                <div class="flex flex-col items-center justify-center">
+                    <p>PAC</p>
+                    <p>-</p>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <p>SHO</p>
+                    <p>-</p>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <p>PAS</p>
+                    <p>-</p>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <p>DRI</p>
+                    <p>-</p>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <p>DEF</p>
+                    <p>-</p>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <p>PHY</p>
+                    <p>-</p>
+                </div>
+            </div>
+            <div class="flex ">
+                <div>
+                    <img src="" alt="">
+                </div>
+                <div>
+                    <img src="" alt="">
+                </div>
+                <div>
+                    <img src="" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="relative w-40  hover:[filter:drop-shadow(0px_0px_30px#417560)]">
+        <img src="../images/badge_gold.webp" alt="" class="object-contain h-[200px]">
+        <div class="absolute w-[50%] top-12 left-8"><img src="../assets/players/ronaldo.webp" alt=""></div>
+        <div class="flex flex-col items-center text-sm justify-center absolute top-10 left-5">
+            <p>95</p>
+            <p>RW</p>
+        </div>
+        <div class=" flex flex-col absolute bottom-[33px] left-4">
+            <div class="text-center"><p>L.messi</p></div>
+            <div class="flex gap-1 justify-center items-center w-[112px] text-[8px]">
+                <div class="flex flex-col items-center justify-center">
+                    <p>PAC</p>
+                    <p>-</p>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <p>SHO</p>
+                    <p>-</p>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <p>PAS</p>
+                    <p>-</p>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <p>DRI</p>
+                    <p>-</p>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <p>DEF</p>
+                    <p>-</p>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <p>PHY</p>
+                    <p>-</p>
+                </div>
+            </div>
+            <div class="flex ">
+                <div>
+                    <img src="" alt="">
+                </div>
+                <div>
+                    <img src="" alt="">
+                </div>
+                <div>
+                    <img src="" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="relative w-40 hover:[filter:drop-shadow(0px_0px_30px#417560)]">
+        <img src="../images/badge_gold.webp" alt="" class="object-contain h-[200px]">
+        <div class="absolute w-[50%] top-12 left-8"><img src="../assets/players/ronaldo.webp" alt=""></div>
+        <div class="flex flex-col items-center text-sm justify-center absolute top-10 left-5">
+            <p>95</p>
+            <p>RW</p>
+        </div>
+        <div class=" flex flex-col absolute bottom-[33px] left-4">
+            <div class="text-center"><p>L.messi</p></div>
+            <div class="flex gap-1 justify-center items-center w-[112px] text-[8px]">
+                <div class="flex flex-col items-center justify-center">
+                    <p>PAC</p>
+                    <p>-</p>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <p>SHO</p>
+                    <p>-</p>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <p>PAS</p>
+                    <p>-</p>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <p>DRI</p>
+                    <p>-</p>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <p>DEF</p>
+                    <p>-</p>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <p>PHY</p>
+                    <p>-</p>
+                </div>
+            </div>
+            <div class="flex ">
+                <div>
+                    <img src="" alt="">
+                </div>
+                <div>
+                    <img src="" alt="">
+                </div>
+                <div>
+                    <img src="" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="relative w-40  hover:[filter:drop-shadow(0px_0px_30px#417560)]">
+        <img src="../images/badge_gold.webp" alt="" class="object-contain h-[200px]">
+        <div class="absolute w-[50%] top-12 left-8"><img src="../assets/players/ronaldo.webp" alt=""></div>
+        <div class="flex flex-col items-center text-sm justify-center absolute top-10 left-5">
+            <p>95</p>
+            <p>RW</p>
+        </div>
+        <div class=" flex flex-col absolute bottom-[33px] left-4">
+            <div class="text-center"><p>L.messi</p></div>
+            <div class="flex gap-1 justify-center items-center w-[112px] text-[8px]">
+                <div class="flex flex-col items-center justify-center">
+                    <p>PAC</p>
+                    <p>-</p>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <p>SHO</p>
+                    <p>-</p>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <p>PAS</p>
+                    <p>-</p>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <p>DRI</p>
+                    <p>-</p>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <p>DEF</p>
+                    <p>-</p>
+                </div>
+                <div class="flex flex-col items-center justify-center">
+                    <p>PHY</p>
+                    <p>-</p>
+                </div>
+            </div>
+            <div class="flex ">
+                <div>
+                    <img src="" alt="">
+                </div>
+                <div>
+                    <img src="" alt="">
+                </div>
+                <div>
+                    <img src="" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     <script src="script.js"></script>
 </body>
 
