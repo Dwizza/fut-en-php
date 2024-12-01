@@ -15,7 +15,7 @@
 </head>
 
 <body class="bg-black"
-    style="background-image: url(../images/Untitled-1.png); background-repeat: no-repeat; background-size: cover; background-position: center;">
+    style="background-image: url(../images/stadium_background.webp); background-repeat: no-repeat; background-size: cover; background-position: center;">
 
     <header class="h-14 bg-gradient-to-b from-neutral-900 to-neutral-800 flex items-center justify-center">
         <h1 class="text-white text-lg md:text-2xl font-bold">FUT Ultimate Team</h1>
@@ -23,7 +23,7 @@
 
     <div class="md:flex items-center justify-around px-4 py-6">
         <div class="relative mt-5 h-[655px] max-h-screen w-full md:w-[60%]">
-            <img src="../images/téléchargement.svg" alt="Formation Background" class="object-cover w-full h-full">
+            <img src="../images/téléchargement.svg" alt="Formation Background" class="object-cover w-full h-full [filter:drop-shadow(5px_0px_100px#000)]">
             <div class="absolute bottom-5 w-full h-full flex flex-col gap-[0.8rem]">
                 
                 <div class="flex justify-center gap-24">
@@ -643,51 +643,65 @@
                 <div ><i class="fa-solid fa-circle-xmark text-white cursor-pointer" onclick="fermer()"></i></div>
                 <p class="col-span-2 text-center text-emerald-50 font-semibold">Ajouter un joueur</p>
                 <label class="w-full text-white">
-                    name<br>
-                    <input type="text" class="w-full rounded-lg px-2 py-2 bg-[#333533]" required>
+                    Name<br>
+                    <input type="text" placeholder="name" class="w-full rounded-lg px-2 py-2 bg-[#333533]" required>
                   </label>
                   
-                  <label class="w-full text-white">
-                    photo<br>
-                    <input type="url" class="w-full rounded-lg px-2 py-2 bg-[#333533]" required>
+                  <label class="w-full text-white">Photo
+                   <select id="select-player" class="w-full rounded-lg  bg-[#333533]" placeholder="Pick the player image..."></select>
                 </label>
-                <label for="" class="w-full text-white">nation
+                <label for="" class="w-full text-white">Nation
                     <select id="select-nation" class="w-full rounded-lg  bg-[#333533]" placeholder="Pick the nation..." ></select>
                 </label>
-                <label class="w-full text-white">team<br><select id="select-team" class="w-full rounded-lg bg-[#333533]" placeholder="Pick the team..." ></select></label>
-                <label class="w-full text-white">rating<br><input min="30" max="100" type="number" class="w-full rounded-lg px-2 py-2 bg-[#333533]" required></label>
-                <label class="w-full text-white">pace<br><input min="30" max="100" type="number" class="w-full rounded-lg px-2 py-2 bg-[#333533]" required></label>
-                <label class="w-full text-white">shooting<br><input min="30" max="100" type="number" class="w-full rounded-lg px-2 py-2 bg-[#333533]" required></label>
-                <label class="w-full text-white">passing<br><input min="30" max="100" type="number" class="w-full rounded-lg px-2 py-2 bg-[#333533]" required></label>
-                <label class="w-full text-white">dribbling<br><input min="30" max="100" type="number" class="w-full rounded-lg px-2 py-2 bg-[#333533]" required></label>
-                <label class="w-full text-white">defending<br><input min="30" max="100" type="number" class="w-full rounded-lg px-2 py-2 bg-[#333533]" required></label>
-                <label class="w-full text-white">physical<br><input min="30" max="100" type="number" class="w-full rounded-lg px-2 py-2 bg-[#333533]" required></label>
+                <label class="w-full text-white">Team<br><select id="select-team" class="w-full rounded-lg bg-[#333533]" placeholder="Pick the team..." ></select></label>
+                <label class="w-full text-white">Rating<br><input min="30" max="100" placeholder="30-100" type="number" class="w-full rounded-lg px-2 py-2 bg-[#333533]" required></label>
+                <label class="w-full text-white">Pace<br><input min="30" max="100" placeholder="30-100" type="number" class="w-full rounded-lg px-2 py-2 bg-[#333533]" required></label>
+                <label class="w-full text-white">Shooting<br><input min="30" max="100" placeholder="30-100" type="number" class="w-full rounded-lg px-2 py-2 bg-[#333533]" required></label>
+                <label class="w-full text-white">Passing<br><input min="30" max="100" placeholder="30-100" type="number" class="w-full rounded-lg px-2 py-2 bg-[#333533]" required></label>
+                <label class="w-full text-white">Dribbling<br><input min="30" max="100" placeholder="30-100" type="number" class="w-full rounded-lg px-2 py-2 bg-[#333533]" required></label>
+                <label class="w-full text-white">Defending<br><input min="30" max="100" placeholder="30-100" type="number" class="w-full rounded-lg px-2 py-2 bg-[#333533]" required></label>
+                <label class="w-full text-white">Physical<br><input min="30" max="100" placeholder="30-100" type="number" class="w-full rounded-lg px-2 py-2 bg-[#333533]" required></label>
                 <button
                 data-twe-ripple-init
                 data-twe-ripple-color="dark"
                 type="button" onclick="putValue(event)"
-                    class="px-5 py-2 bg-[#f5cb5c] rounded-xl hover:scale-x-105 text-black col-span-2 text-center">ADD</button>
+                    class="px-5 py-2 bg-[#f5cb5c] rounded-xl text-black col-span-2 text-center">ADD</button>
             </form>
         </div>
     </div>
 
     <!-- changement  -->
 
+<!-- button up down  -->
 
-<div class="relative group">
+<div class="relative group" id="up">
     <button 
-    onclick="bench()"
-        class=" fixed right-20 bottom-2"
+    onclick="benchUp()"
+        class=" fixed left-10 bottom-0 z-10 animate-bounce"
         onmouseover="document.getElementById('notification').classList.remove('hidden')" 
         onmouseout="document.getElementById('notification').classList.add('hidden')">
         <i class="fa-solid fa-circle-arrow-up text-white text-3xl"></i>
     </button>
-    <div id="notification" class="hidden fixed bottom-12 right-14 bg-gray-800 text-white text-sm px-4 py-2 rounded shadow-lg">
+    <div id="notification" class="hidden fixed bottom-12 left-2 bg-gray-800 text-white text-sm px-4 py-2 rounded shadow-lg">
         The bench
     </div>
 </div>
-<div class="grid grid-cols-6 mt-20 gap-10 text-center w-[80%] m-auto" style="display: none;">
-    <p class="text-white col-span-6 text-center ">Changement</p>
+<div class="relative group" id="down" style="display: none;">
+    <button 
+    onclick="benchDown()"
+        class=" fixed left-10 bottom-0 z-10 animate-bounce"
+        onmouseover="document.getElementById('notification').classList.remove('hidden')" 
+        onmouseout="document.getElementById('notification').classList.add('hidden')">
+        <i class="fa-solid fa-circle-arrow-down  text-white text-3xl"></i>
+    </button>
+</div>
+
+<!-- card  -->
+
+<div class="grid grid-cols-2 gap-5 items-center w-[20%] h-[80%] ease-in-out duration-500   text-center fixed left-0 -bottom-[600px] bg-slate-800 rounded-3xl" id="changement" >
+    
+    <p class="text-white col-span-2 text-center ">Changement</p>
+
     <div class="relative w-28 h-[9.7rem] hover:[filter:drop-shadow(0px_0px_30px#F7E7C3)] cursor-pointer cards" onclick="cardPlayers(event)">
         <img src="../images/badge_gold.png" alt="" class="object-contain h-full w-full ">
         <div class="absolute w-[50%] top-10 left-7" ><img src="../assets/players/Untitled-1.png" alt="" class=" animate-pulse "></div>
@@ -1017,7 +1031,6 @@
             </div>
         </div>
     </div>
-
     
     
     

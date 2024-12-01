@@ -21,7 +21,7 @@ function fermer(){
 
 function putValue(event) {
     event.preventDefault();
-    if(!inputs[0].value || !inputs[1].value ||!inputs[2].value||!inputs[3].value || !inputs[4].value || !inputs[5].value ||!inputs[6].value||!inputs[7].value || !inputs[8].value   ){
+    if(!inputs[0].value || !inputs[1].value ||!inputs[2].value||!inputs[3].value || !inputs[4].value || !inputs[5].value ||!inputs[6].value||!inputs[7].value){
         Swal.fire({
             position: "center",
             icon: "error",
@@ -30,7 +30,7 @@ function putValue(event) {
             timer: 1500
         });
         return;
-    }else if ((inputs[2].value&&inputs[3].value && inputs[4].value && inputs[5].value &&inputs[6].value&&inputs[7].value && inputs[8].value)<30){
+    }else if ((inputs[2].value&&inputs[3].value && inputs[4].value && inputs[5].value &&inputs[6].value&&inputs[7].value)<30){
         Swal.fire({
             position: "center",
             icon: "error",
@@ -39,7 +39,7 @@ function putValue(event) {
             timer: 1500
         });
         return
-    }else if ((inputs[2].value&&inputs[3].value && inputs[4].value && inputs[5].value &&inputs[6].value&&inputs[7].value && inputs[8].value)>100){
+    }else if ((inputs[2].value&&inputs[3].value && inputs[4].value && inputs[5].value &&inputs[6].value&&inputs[7].value )>100){
         Swal.fire({
             position: "center",
             icon: "error",
@@ -52,9 +52,8 @@ function putValue(event) {
     else{
     // add Images
     const imgPlayer = cards.querySelectorAll('img')[1];
-    imgPlayer.setAttribute('src', inputs[1].value);
-    imgPlayer.setAttribute('class','');
-    console.log(imgPlayer);
+    imgPlayer.removeAttribute('class',"animate-pulse");
+    imgPlayer.setAttribute('src', document.querySelector('.Player').src);
     // add nation
     const nation = cards.querySelectorAll('img')[2];
     nation.setAttribute('src', document.querySelector('.Flag').src);
@@ -63,28 +62,28 @@ function putValue(event) {
     team.setAttribute('src', document.querySelector('.Team').src) 
     // Add rating
     const rating = cards.querySelector('p');
-    rating.textContent = inputs[2].value;
+    rating.textContent = inputs[1].value;
     // Add Name
     const name = cards.querySelectorAll('p')[2];
     name.textContent = inputs[0].value;
     // Add Pace
     const pace = cards.querySelectorAll('p')[4];
-    pace.textContent = inputs[3].value;
+    pace.textContent = inputs[2].value;
     // Add shooting
     const shooting = cards.querySelectorAll('p')[6];
-    shooting.textContent = inputs[4].value;
+    shooting.textContent = inputs[3].value;
     // Add passing
     const passing = cards.querySelectorAll('p')[8];
-    passing.textContent = inputs[5].value;
+    passing.textContent = inputs[4].value;
     // Add dribbling
     const dribbling = cards.querySelectorAll('p')[10];
-    dribbling.textContent = inputs[6].value;
+    dribbling.textContent = inputs[5].value;
     // Add defending
     const defending = cards.querySelectorAll('p')[12];
-    defending.textContent = inputs[7].value;
+    defending.textContent = inputs[6].value;
     // Add physical
     const physical = cards.querySelectorAll('p')[14];
-    physical.textContent = inputs[8].value;
+    physical.textContent = inputs[7].value;
     
     const displayStatistique = cards.querySelectorAll('div')[2];
     displayStatistique.style.display = 'flex';
@@ -109,13 +108,7 @@ function edit(){
     inputs[2].value = rating.textContent;
     // Add Name
     const name = cards.querySelectorAll('p')[2];
-        inputs[0].value = name.textContent ;
-    // // Add nation
-    // const nation = cards.querySelectorAll('img')[2];
-    //     inputs[0].value = nation.textContent ;
-    //      // add team
-    // const team = cards.querySelectorAll('img')[3];
-    // team.setAttribute('src', document.querySelector('.Team').src) 
+    inputs[0].value = name.textContent ; 
     // Add Pace
     const pace = cards.querySelectorAll('p')[4];
     inputs[3].value = pace.textContent ;
@@ -151,31 +144,49 @@ function delet(){
     team.removeAttribute('src')
     // Add rating
     const rating = cards.querySelector('p');
-    rating.textContent = "--";
+    rating.textContent = "";
     // Add Name
     const name = cards.querySelectorAll('p')[2];
-    name.textContent = "------";
+    name.textContent = "";
     // Add Pace
     const pace = cards.querySelectorAll('p')[4];
-    pace.textContent = "--";
+    pace.textContent = "";
     // Add shooting
     const shooting = cards.querySelectorAll('p')[6];
-    shooting.textContent = "--";
+    shooting.textContent = "";
     // Add passing
     const passing = cards.querySelectorAll('p')[8];
-    passing.textContent = "--";
+    passing.textContent = "";
     // Add dribbling
     const dribbling = cards.querySelectorAll('p')[10];
-    dribbling.textContent = "--";
+    dribbling.textContent = "";
     // Add defending
     const defending = cards.querySelectorAll('p')[12];
-    defending.textContent = "--";
+    defending.textContent = "";
     // Add physical
     const physical = cards.querySelectorAll('p')[14];
-    physical.textContent = "--";
+    physical.textContent = "";
     form1.style.display = 'none';
     const displayStatistique = cards.querySelectorAll('div')[2];
     displayStatistique.style.display = 'none';
+    myForm.reset();
+}
+//changement 
+function benchUp(){
+    const changement = document.getElementById('changement');
+    const down = document.getElementById('down');
+    const up = document.getElementById('up');
+    changement.setAttribute('class','grid grid-cols-2 gap-5 items-center w-[20%] h-[80%] ease-in-out duration-500 text-center fixed left-0 bottom-20 bg-slate-800 rounded-3xl')
+    up.style.display="none"
+    down.style.display="block"
+}
+function benchDown(){
+    const changement = document.getElementById('changement');
+    const down = document.getElementById('down');
+    const up = document.getElementById('up');
+    changement.setAttribute('class','grid grid-cols-2 gap-5 items-center w-[20%] h-[80%] ease-in-out duration-500 text-center fixed left-0 -bottom-[600px] bg-slate-800 rounded-3xl')
+    up.style.display="block"
+    down.style.display="none"
 }
     // nation
     new TomSelect('#select-nation',{
@@ -235,6 +246,37 @@ function delet(){
             item: function(item, escape) {
                 return `<div class="flex" style="display: flex;align-items: center;">
                         <img src="${item.img}" alt="" class="Team w-[20px] h-[20px]" >
+                        <span>${item.name}</span>
+                        </div>;`
+            }
+        },
+    });
+    new TomSelect('#select-player',{
+        valueField: 'img',
+        labelField: 'name',
+        searchField: 'name',
+        // fetch remote data
+        load: function(query, callback) {
+            fetch("./json-pack/players.json")
+                .then(response => response.json())
+                .then(json => {
+                    callback(json);
+                    console.log(json);
+                }).catch(()=>{
+                    callback();
+                });
+    
+        },
+        render: {
+            option: function(item, escape) {
+                return `<div class="flex w-full">
+                        <img src="${item.img}" alt="" class="w-[20px] h-[20px]" >
+                        <h1>${item.name}</h1>
+                        </div>;`
+            },
+            item: function(item, escape) {
+                return `<div class="flex" style="display: flex;align-items: center;">
+                        <img src="${item.img}" alt="" class="Player w-[20px] h-[20px]" >
                         <span>${item.name}</span>
                         </div>;`
             }
