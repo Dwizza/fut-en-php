@@ -5,7 +5,6 @@ const form1 = document.getElementById("form1");
 const form2 = document.getElementById("form2");
 const myForm = document.getElementById("myForm");
 let cards = null
-let cache = document.getElementById("cache");
 
 function cardPlayers(event){
     if(event.target.hasAttribute('data-info')) {
@@ -13,7 +12,7 @@ function cardPlayers(event){
     }
 
     cards = event.currentTarget;
-    form1.style.display = 'block';
+    form1.setAttribute('class', 'm-5 w-[50%] w-full absolute top-10 ease-in-out duration-300 left-[24%]')
     
 }
 function cardPlayer(event){
@@ -22,11 +21,11 @@ function cardPlayer(event){
     }
 
     cards = event.currentTarget;
-    form2.setAttribute('class', 'm-5 md:w-[35%] w-full absolute top-10 ease-in-out duration-300 left-[30%]')
+    form2.setAttribute('class', 'm-5 w-[50%] w-full absolute top-10 ease-in-out duration-300 left-[30%]')
 }
 function fermer(){
-    form1.style.display = 'none';
-    form2.setAttribute('class', 'm-5 md:w-[35%] w-full absolute -top-[700px] ease-in-out duration-300 left-[30%]');
+    form1.setAttribute('class', 'm-5 md:w-[20%] w-full absolute -top-[1000px] ease-in-out duration-300 left-[30%]')
+    form2.setAttribute('class', 'm-5 md:w-[20%] w-full absolute -top-[1000px] ease-in-out duration-300 left-[30%]');
     myForm1.reset();
 }
 
@@ -107,7 +106,7 @@ function putValue(event) {
         timer: 1000
     });
 
-    form1.style.display = 'none';
+    form1.setAttribute('class', 'm-5 md:w-[20%] w-full absolute -top-[700px] ease-in-out duration-300 left-[30%]')
     myForm.reset();}
 }
 function putChangement(event){
@@ -191,8 +190,7 @@ function putChangement(event){
         timer: 1000
     });
 
-    form1.style.display = 'none';
-    form2.setAttribute('class', 'm-5 md:w-[35%] w-full absolute -top-[700px] ease-in-out duration-300 left-left-[40%]');
+    form2.setAttribute('class', 'm-5 md:w-[20%] w-full absolute -top-[700px] ease-in-out duration-300 left-[30%]');
     myForm1.reset();
     return;
 }
@@ -200,34 +198,32 @@ function putChangement(event){
 
 function edit(event){
     const target = event.currentTarget.parentElement.parentElement;
-    const imgPlayer = target.querySelectorAll('img')[1];
-    inputs[1].value = imgPlayer.getAttribute('src');
     
     const rating = target.querySelectorAll('p')[0];
-    inputs[2].value = rating.textContent;
+    inputs[1].value = rating.textContent;
     // Add Name
     const name = target.querySelectorAll('p')[2];
     inputs[0].value = name.textContent ; 
     // Add Pace
     const pace = target.querySelectorAll('p')[4];
-    inputs[3].value = pace.textContent ;
+    inputs[2].value = pace.textContent ;
     // Add shooting
     const shooting = target.querySelectorAll('p')[6];
-    inputs[4].value = shooting.textContent;
+    inputs[3].value = shooting.textContent;
     // Add passing
     const passing = target.querySelectorAll('p')[8];
-    inputs[5].value = passing.textContent;
+    inputs[4].value = passing.textContent;
     // Add dribbling
     const dribbling = target.querySelectorAll('p')[10];
-    inputs[6].value = dribbling.textContent;
+    inputs[5].value = dribbling.textContent;
     // Add defending
     const defending = target.querySelectorAll('p')[12];
-    inputs[7].value = defending.textContent;
+    inputs[6].value = defending.textContent;
     // Add physical
     const physical = target.querySelectorAll('p')[14];
-    inputs[8].value = physical.textContent;
+    inputs[7].value = physical.textContent;
 
-    form1.style.display = 'none';
+    form1.setAttribute('class', 'm-5 md:w-[20%] w-full absolute -top-[700px] ease-in-out duration-300 left-[30%]')
 }
 function editC(){
     const rating = cards.querySelectorAll('p')[0];
@@ -256,7 +252,7 @@ function editC(){
     // Add physical
     const physical = cards.querySelectorAll('p')[14];
     inputs1[7].value = physical.textContent;
-    form2.setAttribute('class', 'm-5 md:w-[35%] w-full absolute -top-[700px] ease-in-out duration-300 left-left-[40%]')
+    form2.setAttribute('class', 'm-5 md:w-[20%] w-full absolute -top-[700px] ease-in-out duration-300 left-[30%]')
 }
 function delet(event){
     const target = event.currentTarget.parentElement.parentElement;
@@ -296,7 +292,7 @@ function delet(event){
     // Add physical
     const physical = target.querySelectorAll('p')[14];
     physical.textContent = "";
-    form1.style.display = 'none';
+    form1.setAttribute('class', 'm-5 md:w-[20%] w-full absolute -top-[700px] ease-in-out duration-300 left-[30%]')
     const displayStatistique = target.querySelectorAll('div')[2];
     displayStatistique.style.display = 'none';
 }
@@ -305,7 +301,7 @@ function benchUp(){
     const changement = document.getElementById('changement');
     const down = document.getElementById('down');
     const up = document.getElementById('up');
-    changement.setAttribute('class','grid grid-cols-2 gap-5 justify-items-center w-[20%] h-[80%] ease-in-out duration-500 text-center fixed left-2 bottom-20 bg-slate-800 rounded-3xl')
+    changement.setAttribute('class','flex flex-col gap-5 overflow-y-scroll items-center w-[20%] h-[80%] ease-in-out duration-500 text-center fixed left-2 bottom-20 bg-slate-800 rounded-xl')
     up.style.display="none"
     down.style.display="block"
 }
@@ -313,7 +309,7 @@ function benchDown(){
     const changement = document.getElementById('changement');
     const down = document.getElementById('down');
     const up = document.getElementById('up');
-    changement.setAttribute('class','grid grid-cols-2 justify-items-center gap-5 items-center w-[20%] h-[80%] ease-in-out duration-500 text-center fixed left-0 -bottom-[600px] bg-slate-800 rounded-3xl')
+    changement.setAttribute('class','flex flex-col items-center overflow-y-scroll gap-5 w-[20%] h-[80%] ease-in-out duration-500 text-center fixed left-2 -bottom-[600px] bg-slate-800 rounded-xl')
     up.style.display="block"
     down.style.display="none"
 }
@@ -507,3 +503,9 @@ function benchDown(){
             }
         },
     });
+
+
+
+
+
+    
