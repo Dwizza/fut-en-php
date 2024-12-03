@@ -23,6 +23,7 @@ function cardPlayer(event){
     cards = event.currentTarget;
     form2.setAttribute('class', 'm-5 w-[50%] w-full absolute top-10 ease-in-out duration-300 left-[30%]')
 }
+
 function fermer(){
     form1.setAttribute('class', 'm-5 md:w-[20%] w-full absolute -top-[1000px] ease-in-out duration-300 left-[30%]')
     form2.setAttribute('class', 'm-5 md:w-[20%] w-full absolute -top-[1000px] ease-in-out duration-300 left-[30%]');
