@@ -386,6 +386,8 @@ function benchDown(){
                 .then(response => response.json())
                 .then(json => {
                     callback(json);
+                    console.log(callback(json));
+                    
             
                 }).catch(()=>{
                     callback();
@@ -503,3 +505,34 @@ function benchDown(){
             }
         },
     });
+
+//     const terrain = document.querySelectorAll(".terrain")
+// undefined
+// const terrain = document.querySelector(".terrain")
+// undefined
+// const card = terrain.querySelectorAll(".cards")
+// undefined
+// card.forEach((e)=>consoleog(e.querySelectorAll("p")[0]))
+// VM3414:1 Uncaught ReferenceError: consoleog is not defined
+//     at <anonymous>:1:19
+//     at NodeList.forEach (<anonymous>)
+//     at <anonymous>:1:6
+// (anonymous) @ VM3414:1
+// (anonymous) @ VM3414:1Understand this errorAI
+// card.forEach((e)=>console.log(e.querySelectorAll("p")[0]))
+// VM3428:1 <p>​45​</p>​
+// VM3428:1 <p>​51​</p>​
+// VM3428:1 <p>​55​</p>​
+// VM3428:1 <p>​95​</p>​
+// VM3428:1 <p>​45​</p>​
+// VM3428:1 <p>​73​</p>​
+// VM3428:1 <p>​54​</p>​
+// VM3428:1 <p>​45​</p>​
+// VM3428:1 <p>​51​</p>​
+// VM3428:1 <p>​51​</p>​
+// VM3428:1 <p>​93​</p>​
+// undefined
+// const temp;
+// VM3633:1 Uncaught SyntaxError: Missing initializer in const declarationUnderstand this errorAI
+// const temp = 0
+// undefined
