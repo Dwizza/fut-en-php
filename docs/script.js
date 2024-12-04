@@ -309,7 +309,7 @@ function benchDown(){
     const changement = document.getElementById('changement');
     const down = document.getElementById('down');
     const up = document.getElementById('up');
-    changement.setAttribute('class','flex flex-col items-center overflow-y-scroll gap-5 w-[25%] h-[80%] ease-in-out duration-500 text-center fixed left-2 -bottom-[600px] bg-[#404040] rounded-xl')
+    changement.setAttribute('class','flex flex-col items-center overflow-y-scroll gap-5 w-[25%] h-[80%] ease-in-out duration-500 text-center fixed left-2 -bottom-[800px] bg-[#404040] rounded-xl')
     up.style.display="block"
     down.style.display="none"
 }
@@ -503,9 +503,3 @@ function benchDown(){
             }
         },
     });
-
-
-
-
-
-    
