@@ -17,11 +17,15 @@
 
 </head>
 
-<body class="bg-black h-full font-mono"
+<body class="bg-black h-full font-ubuntu-light"
     style="background-image: url(../images/bg-stade.jpg); background-repeat: no-repeat; background-size: cover; background-position: center;">
 
-    <header class="h-14 bg-gradient-to-b from-neutral-900 to-transparent flex items-center justify-center">
+    <header class="h-14 bg-gradient-to-b from-neutral-900 to-neutral-500 flex items-center justify-around">
         <h1 class="text-white text-lg md:text-2xl font-bold">FUT Ultimate Team</h1>
+        <div>
+          <a href="index2.php" class="text-decoration-none"> <button class="bg-zinc-800 text-white py-2 px-4 rounded-xl hover:bg-zinc-500">Admin</button></a>
+
+        </div>
     </header>
 
     <div class=" px-4 py-6">
@@ -39,48 +43,10 @@
                             <p></p>
                             <p>LW</p>
                         </div>
-                        <div class=" flex flex-col absolute md:bottom-2 md:-left-0 bottom-5 -left-0" style="display: none;" >  <!--3-->
-                            <div class="text-center"><p>kjhkuh</p></div>
-                            <div class="flex gap-1 justify-center items-center w-24 text-[0.4em] md:w-28 md:text-[0.5em]">
-                                <div class="flex flex-col items-center justify-center">
-                                    <p>PAC</p>
-                                    <p></p>
-                                </div>
-                                <div class="flex flex-col items-center justify-center">
-                                    <p>SHO</p>
-                                    <p></p>
-                                </div>
-                                <div class="flex flex-col items-center justify-center">
-                                    <p>PAS</p>
-                                    <p></p>
-                                </div>
-                                <div class="flex flex-col items-center justify-center">
-                                    <p>DRI</p>
-                                    <p></p>
-                                </div>
-                                <div class="flex flex-col items-center justify-center">
-                                    <p>DEF</p>
-                                    <p></p>
-                                </div>
-                                <div class="flex flex-col items-center justify-center">
-                                    <p>PHY</p>
-                                    <p></p>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="flex absolute gap-1 flex-col top-6 right-2"> <!--4-->
-                            <div class="">
-                                <img  alt="" class="w-5">
-                            </div>
-                            <div class="">
-                                <img src="" alt="" class="w-5">
-                            </div>
-                        </div>
+                        
+                        
                         <div class="flex gap-2 absolute left-7 -top-3 md:left-9 md:-top-5" > <!--5-->
-                            <div class="cursor-pointer text-teal-300"  onclick="edit(event)">
-                                <i class="fa-solid fa-pen-to-square" ></i>
-                            </div>
+                           
                             <div class="cursor-pointer text-red-600" data-info="action-btn" onclick="delet(event)">
                                 <i class="fa-solid fa-trash" data-info="action-icon"></i>
                             </div>
@@ -125,18 +91,9 @@
                             </div>
                            
                         </div>
-                        <div class="flex absolute gap-1 flex-col top-6 right-2"> <!--4-->
-                            <div class="">
-                                <img  alt="" class="w-5">
-                            </div>
-                            <div class="">
-                                <img src="" alt="" class="w-5">
-                            </div>
-                        </div>
+                        
                         <div class="flex gap-2 absolute left-7 -top-3 md:left-9 md:-top-5" > <!--5-->
-                            <div class="cursor-pointer text-teal-300"  onclick="edit(event)">
-                                <i class="fa-solid fa-pen-to-square" ></i>
-                            </div>
+                           
                             <div class="cursor-pointer text-red-600" data-info="action-btn" onclick="delet(event)">
                                 <i class="fa-solid fa-trash" data-info="action-icon"></i>
                             </div>
@@ -179,18 +136,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="flex absolute gap-1 flex-col top-6 right-2"> <!--4-->
-                            <div class="">
-                                <img  alt="" class="w-5">
-                            </div>
-                            <div class="">
-                                <img src="" alt="" class="w-5">
-                            </div>
-                        </div>
+                        
                         <div class="flex gap-2 absolute left-7 -top-3 md:left-9 md:-top-5" > <!--5-->
-                            <div class="cursor-pointer text-teal-300"  onclick="edit(event)">
-                                <i class="fa-solid fa-pen-to-square" ></i>
-                            </div>
+                           
                             <div class="cursor-pointer text-red-600" data-info="action-btn" onclick="delet(event)">
                                 <i class="fa-solid fa-trash" data-info="action-icon"></i>
                             </div>
@@ -237,18 +185,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="flex absolute gap-1 flex-col top-6 right-2"> <!--4-->
-                            <div class="">
-                                <img  alt="" class="w-5">
-                            </div>
-                            <div class="">
-                                <img src="" alt="" class="w-5">
-                            </div>
-                        </div>
+                        
                         <div class="flex gap-2 absolute left-7 -top-3 md:left-9 md:-top-5" > <!--5-->
-                            <div class="cursor-pointer text-teal-300"  onclick="edit(event)">
-                                <i class="fa-solid fa-pen-to-square" ></i>
-                            </div>
+                           
                             <div class="cursor-pointer text-red-600" data-info="action-btn" onclick="delet(event)">
                                 <i class="fa-solid fa-trash" data-info="action-icon"></i>
                             </div>
@@ -291,18 +230,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="flex absolute gap-1 flex-col top-6 right-2"> <!--4-->
-                            <div class="">
-                                <img  alt="" class="w-5">
-                            </div>
-                            <div class="">
-                                <img src="" alt="" class="w-5">
-                            </div>
-                        </div>
+                        
                         <div class="flex gap-2 absolute left-7 -top-3 md:left-9 md:-top-5" > <!--5-->
-                            <div class="cursor-pointer text-teal-300"  onclick="edit(event)">
-                                <i class="fa-solid fa-pen-to-square" ></i>
-                            </div>
+                           
                             <div class="cursor-pointer text-red-600" data-info="action-btn" onclick="delet(event)">
                                 <i class="fa-solid fa-trash" data-info="action-icon"></i>
                             </div>
@@ -354,9 +284,7 @@
                         </div>
                     </div>
                         <div class="flex gap-2 absolute left-7 -top-3 md:left-9 md:-top-5" > <!--5-->
-                            <div class="cursor-pointer text-teal-300"  onclick="edit(event)">
-                                <i class="fa-solid fa-pen-to-square" ></i>
-                            </div>
+                           
                             <div class="cursor-pointer text-red-600" data-info="action-btn" onclick="delet(event)">
                                 <i class="fa-solid fa-trash" data-info="action-icon"></i>
                             </div>
@@ -402,18 +330,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="flex absolute gap-1 flex-col top-6 right-2"> <!--4-->
-                            <div class="">
-                                <img  alt="" class="w-5">
-                            </div>
-                            <div class="">
-                                <img src="" alt="" class="w-5">
-                            </div>
-                        </div>
+                        
                         <div class="flex gap-2 absolute left-7 -top-3 md:left-9 md:-top-5" > <!--5-->
-                            <div class="cursor-pointer text-teal-300"  onclick="edit(event)">
-                                <i class="fa-solid fa-pen-to-square" ></i>
-                            </div>
+                           
                             <div class="cursor-pointer text-red-600" data-info="action-btn" onclick="delet(event)">
                                 <i class="fa-solid fa-trash" data-info="action-icon"></i>
                             </div>
@@ -456,18 +375,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="flex absolute gap-1 flex-col top-6 right-2"> <!--4-->
-                            <div class="">
-                                <img  alt="" class="w-5">
-                            </div>
-                            <div class="">
-                                <img src="" alt="" class="w-5">
-                            </div>
-                        </div>
+                        
                         <div class="flex gap-2 absolute left-7 -top-3 md:left-9 md:-top-5" > <!--5-->
-                            <div class="cursor-pointer text-teal-300"  onclick="edit(event)">
-                                <i class="fa-solid fa-pen-to-square" ></i>
-                            </div>
+                           
                             <div class="cursor-pointer text-red-600" data-info="action-btn" onclick="delet(event)">
                                 <i class="fa-solid fa-trash" data-info="action-icon"></i>
                             </div>
@@ -510,18 +420,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="flex absolute gap-1 flex-col top-6 right-2"> <!--4-->
-                            <div class="">
-                                <img  alt="" class="w-5">
-                            </div>
-                            <div class="">
-                                <img src="" alt="" class="w-5">
-                            </div>
-                        </div>
+                        
                         <div class="flex gap-2 absolute left-7 -top-3 md:left-9 md:-top-5" > <!--5-->
-                            <div class="cursor-pointer text-teal-300"  onclick="edit(event)">
-                                <i class="fa-solid fa-pen-to-square" ></i>
-                            </div>
+                           
                             <div class="cursor-pointer text-red-600" data-info="action-btn" onclick="delet(event)">
                                 <i class="fa-solid fa-trash" data-info="action-icon"></i>
                             </div>
@@ -564,19 +465,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="flex absolute gap-1 flex-col top-6 right-2"> <!--4-->
-                            <div class="">
-                                <img  alt="" class="w-5">
-                            </div>
-                            <div class="">
-                                <img src="" alt="" class="w-5">
-                            </div>
-                        </div>
+                        
 
                         <div class="flex gap-2 absolute left-7 -top-3 md:left-9 md:-top-5" > <!--5-->
-                            <div class="cursor-pointer text-teal-300"  onclick="edit(event)">
-                                <i class="fa-solid fa-pen-to-square" ></i>
-                            </div>
+                           
                             <div class="cursor-pointer text-red-600" data-info="action-btn" onclick="delet(event)">
                                 <i class="fa-solid fa-trash" data-info="action-icon"></i>
                             </div>
@@ -624,18 +516,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="flex absolute gap-1 flex-col top-6 right-2"> <!--4-->
-                            <div class="">
-                                <img  alt="" class="w-5">
-                            </div>
-                            <div class="">
-                                <img src="" alt="" class="w-5">
-                            </div>
-                        </div>
+                        
                         <div class="flex gap-2 absolute left-7 -top-3 md:left-9 md:-top-5"> <!--5-->
-                            <div class="cursor-pointer text-teal-300"  onclick="edit(event)">
-                                <i class="fa-solid fa-pen-to-square" ></i>
-                            </div>
+                           
                             <div class="cursor-pointer text-red-600" data-info="action-btn" onclick="delet(event)">
                                 <i class="fa-solid fa-trash" data-info="action-icon"></i>
                             </div>
@@ -646,33 +529,7 @@
             </div>
         </div>
         
-        <div id="form1" class="m-5 md:w-[20%] w-full absolute -top-[1000px] ease-in-out duration-300 left-[30%]">
-            <form action="" id="myForm"
-                class="grid grid-cols-1 md:grid-cols-2 bg-neutral-600 gap-4 p-4 rounded-xl shadow-2xl shadow-black">
-                <div ><i class="fa-solid fa-circle-xmark text-white cursor-pointer" onclick="fermer()"></i></div>
-                <p class="col-span-2 text-center text-emerald-50 font-semibold">Ajouter un joueur</p>
-                <label class="w-full text-white">
-                    Name<br>
-                    <input type="text"  placeholder="name" class="input w-full rounded-lg px-2 py-2 bg-[#333533]" required>
-                </label>
-                <label class="w-full text-white">Photo
-                <select id="select-player" class="w-full rounded-lg  bg-[#333533]" placeholder="Pick the player image..."></select>
-                </label>
-                <label for="" class="w-full text-white">Nation
-                    <select id="select-nation" class="w-full rounded-lg bg-[#333533]" placeholder="Pick the nation..." ></select>
-                </label>
-                <label class="w-full text-white">Team<br><select id="select-team" class="w-full rounded-lg bg-[#333533]" placeholder="Pick the team..." ></select></label>
-                <label class="w-full text-white">Rating<br><input  min="30" max="100" placeholder="30-100" type="number" class="input w-full rounded-lg px-2 py-2 bg-[#333533]" required></label>
-                <label class="w-full text-white">Pace<br><input  min="30" max="100" placeholder="30-100" type="number" class="input w-full rounded-lg px-2 py-2 bg-[#333533]" required></label>
-                <label class="w-full text-white">Shooting<br><input  min="30" max="100" placeholder="30-100" type="number" class="input w-full rounded-lg px-2 py-2 bg-[#333533]" required></label>
-                <label class="w-full text-white">Passing<br><input  min="30" max="100" placeholder="30-100" type="number" class="input w-full rounded-lg px-2 py-2 bg-[#333533]" required></label>
-                <label class="w-full text-white">Dribbling<br><input  min="30" max="100" placeholder="30-100" type="number" class="input w-full rounded-lg px-2 py-2 bg-[#333533]" required></label>
-                <label class="w-full text-white">Defending<br><input  min="30" max="100" placeholder="30-100" type="number" class="input w-full rounded-lg px-2 py-2 bg-[#333533]" required></label>
-                <label class="w-full text-white">Physical<br><input  min="30" max="100" placeholder="30-100" type="number" class="input w-full rounded-lg px-2 py-2 bg-[#333533]" required></label>
-                <button type="button" onclick="putValue(event)"
-                    class="px-5 py-2 bg-[#f5cb5c] rounded-xl text-black col-span-2 text-center">ADD</button>
-            </form>
-        </div>
+       
     </div>
 
     <!-- changement  -->
@@ -815,7 +672,7 @@
             <p></p>
             <p></p>
         </div>
-        <div class=" flex flex-col absolute md:bottom-3 md:-left-0 bottom-3 -left-0 "  >
+        <div class=" flex flex-col absolute md:bottom-3 md:-left-0 bottom-3 -left-0 "  style="display: none;" >
             <div class="text-center"><p></p></div>
             <div class="flex gap-1 justify-center items-center w-24 text-[0.4em] md:w-28 md:text-[0.5em]">
                 <div class="flex flex-col items-center justify-center">
