@@ -1,3 +1,41 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$DBname = "fut_champions_ultimate_team";
+
+$conn = mysqli_connect('localhost', 'root', '','fut_champions_ultimate_team');
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+    }
+    if(isset($_POST['add'])){
+    $name = $_POST['name'];
+    $photo = $_POST['photo'];
+    $position = $_POST['position'];
+    $rating = $_POST['rating'];
+    $pace = $_POST['pace'];
+    $shooting = $_POST['shooting'];
+    $passing = $_POST['passing'];
+    $dribbling = $_POST['dribbling'];
+    $defending = $_POST['defending'];
+    $physical = $_POST['physical'];
+    $nationality = $_POST['nations'];
+    $club = $_POST['club'];
+
+    $sql = "INSERT INTO player (name, photo, position, Rating, pace, shooting, passing, dribbling, defending, physical, id_nationality, id_club)
+            VALUES ('$name', '$photo', '$position', '$rating', '$pace', '$shooting', '$passing', '$dribbling', '$defending', '$physical','$nationality','$club')";
+
+
+        if (mysqli_query($conn, $sql)) {
+        } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+    }
+        // mysqli_close($conn);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,10 +76,10 @@
     </aside>
 
   
-    <div class="pl-72 pt-10 flex flex-col gap-3">
+    <div class="pl-64 pt-10 flex flex-col gap-3">
         <div>
           
-            <button id="openModalButton" class="px-4 py-2 text-white bg-green-500 rounded-xl hover:bg-green-800">Ajouter</button>
+            <button id="openButton" class="px-4 py-2 text-white bg-green-500 rounded-xl hover:bg-green-800">Ajouter</button>
         </div>
 
       
@@ -63,7 +101,25 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    <?php
+                    $playerAdd = "SELECT * FROM player";
+                    $resultAdd = mysqli_query($conn, $playerAdd);
+                    while($rowAdd = mysqli_fetch_assoc($resultAdd)){
+                        echo '<tr>';
+                        echo '<td class="text-center">'.$rowAdd['name'].'</td>';
+                        echo '<td class="text-center">'.$rowAdd['position'].'</td>';
+                        echo '<td class="text-center">'.$rowAdd['Rating'].'</td>';
+                        echo '<td class="text-center">'.$rowAdd['pace'].'</td>';
+                        echo '<td class="text-center">'.$rowAdd['shooting'].'</td>';
+                        echo '<td class="text-center">'.$rowAdd['passing'].'</td>';
+                        echo '<td class="text-center">'.$rowAdd['dribbling'].'</td>';
+                        echo '<td class="text-center">'.$rowAdd['defending'].'</td>';
+                        echo '<td class="text-center">'.$rowAdd['physical'].'</td>';
+                        echo '<td class="text-center"><a href="edit.php?id='.$rowAdd['id'].'" class="text-green-500 "><i class="fa-solid fa-pen-to-square"></i></a></td>';
+                        echo '<td class="text-center"><a href="" class="text-red-500"><i class="fa-solid fa-trash"></i></a></td>';
+                        echo '</tr>';
+                    }
+                    ?>
                     
                 </tbody>
             </table>
@@ -77,7 +133,7 @@
             <form class="flex flex-col justify-center items-center gap-5 mt-5" method="post">
                 <div class="grid grid-cols-2 gap-3 w-full">
                     <label for="">Name<input type="text" name="name" class="focus:border-b-green-500 border-b-2 outline-none text-black w-full"></label>
-                    <label for="">Photo<input type="url" name="photo" class="focus:border-b-green-500 border-b-2 outline-none text-black w-full"></label>
+                    <label for="">Photo<input type="file" name="photo" class="focus:border-b-green-500 border-b-2 outline-none text-black w-full"></label>
                     <label for="">Position
                     <select name="position" id="" class="focus:border-b-green-500 border-b-2 outline-none text-black w-full">
                         <option value="">Choisir..</option>
@@ -93,10 +149,28 @@
                         <option value="CB2">CB2</option>
                         <option value="GK">GK</option>
                     </select></label>
-                    <label for="">Nationality <datalist>
-
-                    </datalist></label>
-                    <label for="">Club<input type="text" name="club" class="focus:border-b-green-500 border-b-2 outline-none text-black w-full"></label>
+                    <label for="">Nationality <select name="nations" class="focus:border-b-green-500 border-b-2 outline-none text-black w-full">
+                        <option value="">choisir le nationality</option>
+                        <?php
+                        $nationality = "SELECT * FROM nationality";
+                        $resultNationality = mysqli_query($conn, $nationality);
+                        while($rowNationality = mysqli_fetch_assoc($resultNationality)){
+                            echo '<option value="'.$rowNationality['id_nationality'].'">'.$rowNationality['nationality_name'].'</option>';
+                        }
+                        ?> 
+                    </select>
+                </label>
+                    <label for="">Club<select name="club" class="focus:border-b-green-500 border-b-2 outline-none text-black w-full">
+                        <option value="">Choisir le club</option>
+                        <?php
+                        $club = "SELECT * FROM club";
+                        $resultClub = mysqli_query($conn, $club);
+                        while($rowClub = mysqli_fetch_assoc($resultClub)){
+                            echo '<option value="'.$rowClub['id_club'].'">'.$rowClub['club_name'].'</option>';
+                        }
+                        ?> 
+                        </select>
+                    </label>
                     <label for="">Rating<input type="number" name="rating" class="focus:border-b-green-500 border-b-2 outline-none text-black w-full"></label>
                     <label for="">Pace<input type="number" name="pace" class="focus:border-b-green-500 border-b-2 outline-none text-black w-full"></label>
                     <label for="">Shooting<input type="number" name="shooting" class="focus:border-b-green-500 border-b-2 outline-none text-black w-full"></label>
@@ -105,7 +179,7 @@
                     <label for="">Defending<input type="number" name="defending" class="focus:border-b-green-500 border-b-2 outline-none text-black w-full"></label>
                     <label for="">Physical<input type="number" name="physical" class="focus:border-b-green-500 border-b-2 outline-none text-black w-full"></label>
                 </div>
-                <button type="submit" class="px-4 py-2 text-white bg-green-500 rounded-xl hover:bg-green-800">Ajouter</button>
+                <button type="submit" name="add" class="px-4 py-2 text-white bg-green-500 rounded-xl hover:bg-green-800">Ajouter</button>
             </form>
             <button id="closeModalButton" class="absolute top-2 right-2 text-red-500 font-bold"><i class="fa-solid fa-circle-xmark"></i></button>
         </div>
@@ -114,16 +188,15 @@
     <script>
         
         const modal = document.getElementById("modal");
-        const openModalButton = document.getElementById("openModalButton");
-        const closeModalButton = document.getElementById("closeModalButton");
+        const openButton = document.getElementById("openButton");
+        const closeButton = document.getElementById("closeModalButton");
 
-        
-        openModalButton.addEventListener("click", () => {
+        openButton.addEventListener("click", () => {
             modal.classList.remove("hidden");
         });
 
         
-        closeModalButton.addEventListener("click", () => {
+        closeButton.addEventListener("click", () => {
             modal.classList.add("hidden");
         });
 
@@ -138,44 +211,3 @@
     <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
 </body>
 </html>
-
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$DBname = "fut_champions_ultimate_team";
-
-$conn = mysqli_connect('localhost', 'root', '','fut_champions_ultimate_team');
-
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-    }
-
-    $name = $_POST['name'];
-    $photo = $_POST['photo'];
-    $position = $_POST['position'];
-    $rating = $_POST['rating'];
-    $pace = $_POST['pace'];
-    $shooting = $_POST['shooting'];
-    $passing = $_POST['passing'];
-    $dribbling = $_POST['dribbling'];
-    $defending = $_POST['defending'];
-    $physical = $_POST['physical'];
-    $rating = $_POST['rating'];
-
-    $sql = "INSERT INTO player (name, photo, position, Rating, pace, shooting, passing, dribbling, defending, physical)
-            VALUES ('$name', '$photo', '$position', '$rating', '$pace', '$shooting', '$passing', '$dribbling', '$defending', '$physical')";
-
-
-        if (mysqli_query($conn, $sql)) {
-            header("Location: " . $_SERVER['PHP_SELF']); // Redirection vers la même page
-        exit();
-        } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-        }
-
-
-mysqli_close($conn);
-
-
-?>
