@@ -1,14 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$DBname = "fut_champions_ultimate_team";
-
-$conn = mysqli_connect('localhost', 'root', '','fut_champions_ultimate_team');
-
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-    }
+include 'database.php';
     if(isset($_POST['add'])){
     $name = $_POST['name'];
     $photo = $_POST['photo'];
@@ -66,8 +57,13 @@ if (!$conn) {
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
                     <li class="hover:bg-zinc-600 px-4 py-2">
-                        <a href="#">
+                        <a href="">
                             <p>Player setting</p>
+                        </a>
+                    </li>
+                    <li class="hover:bg-zinc-600 px-4 py-2">
+                        <a href="nationality.php">
+                            <p>Nationality</p>
                         </a>
                     </li>
                 </ul>
@@ -75,14 +71,13 @@ if (!$conn) {
         </div>
     </aside>
 
-  
-    <div class="pl-64 pt-10 flex flex-col gap-3">
+
+    <div class="ml-64 pt-10 flex flex-col gap-3">
+
         <div>
-          
             <button id="openButton" class="px-4 py-2 text-white bg-green-500 rounded-xl hover:bg-green-800">Ajouter</button>
         </div>
 
-      
         <div>
             <table class="min-w-full table-auto bg-white shadow-lg rounded-lg overflow-hidden">
                 <thead class="bg-green-500 text-white">
@@ -116,7 +111,7 @@ if (!$conn) {
                         echo '<td class="text-center">'.$rowAdd['defending'].'</td>';
                         echo '<td class="text-center">'.$rowAdd['physical'].'</td>';
                         echo '<td class="text-center"><a href="edit.php?id='.$rowAdd['id'].'" class="text-green-500 "><i class="fa-solid fa-pen-to-square"></i></a></td>';
-                        echo '<td class="text-center"><a href="" class="text-red-500"><i class="fa-solid fa-trash"></i></a></td>';
+                        echo '<td class="text-center"><a href="delete.php?id='.$rowAdd['id'].'" class="text-red-500"><i class="fa-solid fa-trash"></i></a></td>';
                         echo '</tr>';
                     }
                     ?>
@@ -127,8 +122,8 @@ if (!$conn) {
     </div>
 
 
-    <div id="modal" class="fixed inset-0  bg-gray-900 bg-opacity-50 hidden justify-center items-center">
-        <div class="bg-white p-4 rounded-lg w-96 relative left-[700px] top-16">
+    <div id="modal" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden justify-center items-center">
+        <div class="bg-white p-4 rounded-lg w-[500px] relative left-[600px] top-16">
             <h1 class="text-2xl font-bold">Ajouter un joueur</h1>
             <form class="flex flex-col justify-center items-center gap-5 mt-5" method="post">
                 <div class="grid grid-cols-2 gap-3 w-full">
@@ -157,9 +152,9 @@ if (!$conn) {
                         while($rowNationality = mysqli_fetch_assoc($resultNationality)){
                             echo '<option value="'.$rowNationality['id_nationality'].'">'.$rowNationality['nationality_name'].'</option>';
                         }
-                        ?> 
+                        ?>
                     </select>
-                </label>
+                    </label>
                     <label for="">Club<select name="club" class="focus:border-b-green-500 border-b-2 outline-none text-black w-full">
                         <option value="">Choisir le club</option>
                         <?php
@@ -184,6 +179,7 @@ if (!$conn) {
             <button id="closeModalButton" class="absolute top-2 right-2 text-red-500 font-bold"><i class="fa-solid fa-circle-xmark"></i></button>
         </div>
     </div>
+
 
     <script>
         
