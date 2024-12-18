@@ -114,7 +114,6 @@ include 'database.php';
                 <?php
                 if(isset($_POST['edit'])){
                     $name = $_POST['name'];
-                    // echo $name;
                     $photo = $_POST['photo'];
                     $position = $_POST['position'];
                     $rating = $_POST['rating'];
@@ -128,7 +127,7 @@ include 'database.php';
                     $club = $_POST['club'];
 
                     $sql = "UPDATE player 
-                    set name='$name',photo='$photo',position='$position',Rating='$rating',pace='$pace',shooting='$shooting',passing='$passing',dribbling='$dribbling',defending='$defending',physical='$physical'
+                    set name='$name',photo='$photo',position='$position',Rating='$rating',pace='$pace',shooting='$shooting',passing='$passing',dribbling='$dribbling',defending='$defending',physical='$physical',id_nationality='$nationality',id_club='$club'
                     WHERE id=".$_GET['id'];
 
 

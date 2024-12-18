@@ -82,7 +82,7 @@ include 'database.php';
                 echo '<tr class="bg-gray-200">';
                 echo '<td class="text-center">'.$rowAdd['id_club'].'</td>';
                 echo '<td class="text-center">'.$rowAdd['club_name'].'</td>';
-                echo '<td class="flex justify-center"><img src="'.$rowAdd['photo'].'" class="w-12"></td>';
+                echo '<td class="flex justify-center"><img src="'.$rowAdd['photoClub'].'" class="w-12"></td>';
                 echo '<td class="text-center"><a href="editclub.php?id='.$rowAdd['id_club'].'" class="text-green-500 "><i class="fa-solid fa-pen-to-square"></i></a></td>';
                 echo '<td class="text-center"><a href="deleteclub.php?id='.$rowAdd['id_club'].'" class="text-red-500"><i class="fa-solid fa-trash"></i></a></td>';
                 echo '</tr>';
@@ -123,7 +123,7 @@ include 'database.php';
     if(isset($_POST['AddClub'])){
         $club_name = $_POST['club_name'];
         $club_photo = $_POST['photoUrl'];
-        $stmt = $conn->prepare("INSERT INTO club (club_name, photo) VALUES (?,?)");
+        $stmt = $conn->prepare("INSERT INTO club (club_name, photoClub) VALUES (?,?)");
         $stmt->bind_param("ss", $club_name, $club_photo);
         $stmt->execute();
         $stmt->close();

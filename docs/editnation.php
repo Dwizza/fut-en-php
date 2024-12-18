@@ -51,7 +51,7 @@ include 'database.php';
         ?>
         <label>Club<br><input type="text" value="<?= $rowEdit['nationality_name']?>" name="nationality_name" class="focus:border-b-green-500 border-b-2 outline-none text-black w-full">
         </label>
-        <label>Lien du photo<br><input type="text" name="photoUrl" value="<?= $rowEdit['photo']?>" class="focus:border-b-green-500 border-b-2 outline-none text-black w-full">
+        <label>Lien du photo<br><input type="text" name="photoUrl" value="<?= $rowEdit['photoNation']?>" class="focus:border-b-green-500 border-b-2 outline-none text-black w-full">
         </label>
         <button class="px-4 py-2 text-white bg-green-500 rounded-xl hover:bg-green-800" name="Updatenationality">Update</button>
         </form>
@@ -66,7 +66,7 @@ include 'database.php';
                     $photo = $_POST['photoUrl'];
 
                     $sql = "UPDATE nationality 
-                    set nationality_name='$nationality',photo='$photo'
+                    set nationality_name='$nationality',photoNation='$photo'
                     WHERE id_nationality=".$_GET['id'];
 
                         if (mysqli_query($conn, $sql)) {

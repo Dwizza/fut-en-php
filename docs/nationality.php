@@ -82,7 +82,7 @@ include 'database.php';
                 echo '<tr>';
                 echo '<td class="text-center">'.$rowAdd['id_nationality'].'</td>';
                 echo '<td class="text-center">'.$rowAdd['nationality_name'].'</td>';
-                echo '<td class="flex justify-center"><img src="'.$rowAdd['photo'].'" class="w-16"></td>';
+                echo '<td class="flex justify-center"><img src="'.$rowAdd['photoNation'].'" class="w-16"></td>';
                 echo '<td class="text-center"><a href="editnation.php?id='.$rowAdd['id_nationality'].'" class="text-green-500 "><i class="fa-solid fa-pen-to-square"></i></a></td>';
                 echo '<td class="text-center"><a href="deletenation.php?id='.$rowAdd['id_nationality'].'" class="text-red-500"><i class="fa-solid fa-trash"></i></a></td>';
                 echo '</tr>';
@@ -123,7 +123,7 @@ include 'database.php';
     if(isset($_POST['AddNation'])){
         $nation_name = $_POST['nation'];
         $nation_photo = $_POST['photoUrl'];
-        $stmt = $conn->prepare("INSERT INTO nationality (nationality_name, photo) VALUES (?,?)");
+        $stmt = $conn->prepare("INSERT INTO nationality (nationality_name, photoNation) VALUES (?,?)");
         $stmt->bind_param("ss", $nation_name, $nation_photo);
         $stmt->execute();
         $stmt->close();
