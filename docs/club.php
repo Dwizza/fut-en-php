@@ -9,7 +9,7 @@ include 'database.php';
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
     <script src="https://kit.fontawesome.com/e9ee48a8e3.js" crossorigin="anonymous"></script>
-    <title>Ajouter Country</title>
+    <title>Ajouter Club</title>
 </head>
 <body>
 <header class="grid grid-cols-2 h-16 bg-white">
@@ -52,11 +52,11 @@ include 'database.php';
 <div id="modal" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden justify-center items-center">
     <div class="bg-white p-4 rounded-lg w-[500px] relative left-[600px] top-16">
         <form action="" method="POST" class="flex flex-col w-full gap-5 p-5 bg-white rounded-xl" >
-        <label>Nationality<br><input type="text" name="nation" class="focus:border-b-green-500 border-b-2 outline-none text-black w-full">
+        <label>Club<br><input type="text" name="club_name" class="focus:border-b-green-500 border-b-2 outline-none text-black w-full">
         </label>
         <label>Lien du photo<br><input type="text" name="photoUrl" class="focus:border-b-green-500 border-b-2 outline-none text-black w-full">
         </label>
-        <button class="px-4 py-2 text-white bg-green-500 rounded-xl hover:bg-green-800" name="AddNation">Ajouter</button>
+        <button class="px-4 py-2 text-white bg-green-500 rounded-xl hover:bg-green-800" name="AddClub">Ajouter</button>
         </form>
         <button id="closeModalButton" class="absolute top-2 right-2 text-red-500 font-bold"><i class="fa-solid fa-circle-xmark"></i></button>
     </div>
@@ -68,7 +68,7 @@ include 'database.php';
         <thead class="bg-green-500 text-white">
         <tr >
             <th class="py-3 px-4 text-center">Id</th>
-            <th class="py-3 px-2 text-center">Country</th>
+            <th class="py-3 px-2 text-center">club</th>
             <th class="py-3 px-3 text-center">Url</th>      
             <th class="py-3 px-4 text-center">Edit</th>      
             <th class="py-3 px-4 text-center">Delete</th>      
@@ -76,15 +76,15 @@ include 'database.php';
         </thead>
         <tbody>
         <?php
-            $nation = "SELECT * FROM nationality order by nationality_name ASC";
-            $connect = mysqli_query($conn, $nation);
+            $club = "SELECT * FROM club order by club_name ASC";
+            $connect = mysqli_query($conn, $club);
             while($rowAdd = mysqli_fetch_assoc($connect)){
-                echo '<tr>';
-                echo '<td class="text-center">'.$rowAdd['id_nationality'].'</td>';
-                echo '<td class="text-center">'.$rowAdd['nationality_name'].'</td>';
-                echo '<td class="flex justify-center"><img src="'.$rowAdd['photo'].'" class="w-16"></td>';
-                echo '<td class="text-center"><a href="editnation.php?id='.$rowAdd['id_nationality'].'" class="text-green-500 "><i class="fa-solid fa-pen-to-square"></i></a></td>';
-                echo '<td class="text-center"><a href="deletenation.php?id='.$rowAdd['id_nationality'].'" class="text-red-500"><i class="fa-solid fa-trash"></i></a></td>';
+                echo '<tr class="bg-gray-200">';
+                echo '<td class="text-center">'.$rowAdd['id_club'].'</td>';
+                echo '<td class="text-center">'.$rowAdd['club_name'].'</td>';
+                echo '<td class="flex justify-center"><img src="'.$rowAdd['photo'].'" class="w-12"></td>';
+                echo '<td class="text-center"><a href="editclub.php?id='.$rowAdd['id_club'].'" class="text-green-500 "><i class="fa-solid fa-pen-to-square"></i></a></td>';
+                echo '<td class="text-center"><a href="deleteclub.php?id='.$rowAdd['id_club'].'" class="text-red-500"><i class="fa-solid fa-trash"></i></a></td>';
                 echo '</tr>';
             }
             ?>
@@ -120,11 +120,11 @@ include 'database.php';
     <?php
     
     
-    if(isset($_POST['AddNation'])){
-        $nation_name = $_POST['nation'];
-        $nation_photo = $_POST['photoUrl'];
-        $stmt = $conn->prepare("INSERT INTO nationality (nationality_name, photo) VALUES (?,?)");
-        $stmt->bind_param("ss", $nation_name, $nation_photo);
+    if(isset($_POST['AddClub'])){
+        $club_name = $_POST['club_name'];
+        $club_photo = $_POST['photoUrl'];
+        $stmt = $conn->prepare("INSERT INTO club (club_name, photo) VALUES (?,?)");
+        $stmt->bind_param("ss", $club_name, $club_photo);
         $stmt->execute();
         $stmt->close();
         $conn->close();

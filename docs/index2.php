@@ -66,6 +66,11 @@ include 'database.php';
                             <p>Nationality</p>
                         </a>
                     </li>
+                    <li class="hover:bg-zinc-600 px-4 py-2">
+                        <a href="club.php">
+                            <p>Club</p>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>

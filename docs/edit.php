@@ -59,7 +59,7 @@ include 'database.php';
                     <label for="">Photo<input  type="file" name="photo" class="focus:border-b-green-500 border-b-2 outline-none text-black w-full"></label>
                     <label for="">Position
                     <select name="position" id="" value="" class="focus:border-b-green-500 border-b-2 outline-none text-black w-full">
-                        <option value="">Choisir..</option>
+                        <option value="<?= $rowEdit['position']?>"><?= $rowEdit['position']?></option>
                         <option value="ST">ST</option>
                         <option value="RW">RW</option>
                         <option value="LW">LW</option>
