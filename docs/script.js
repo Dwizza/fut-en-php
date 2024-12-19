@@ -1,34 +1,45 @@
-const inputs = document.querySelectorAll('.input');
-const inputs1 = document.querySelectorAll('.input1');
-const position = document.getElementById('position');
-const form1 = document.getElementById("form1");
-const form2 = document.getElementById("form2");
-const myForm = document.getElementById("myForm");
 let cards = null
+let cardsFromDB = document.querySelectorAll('.cardsFromDB');
+const modal = document.getElementById("modal");
+const openButton = document.getElementById("openButton");
+const closeButton = document.getElementById("closeButton");
+const RW = document.getElementById("RW");
+
 
 function cardPlayers(event){
-    if(event.target.hasAttribute('data-info')) {
-        return;
-    }
-
     cards = event.currentTarget;
-    form1.setAttribute('class', 'm-5 md:w-[50%] w-[70%] absolute top-10 ease-in-out duration-300 left-[10%] md:left-[25%]')
+    const position = cards.querySelectorAll('p')[1].textContent;
     
-}
-function cardPlayer(event){
-    if(event.target.hasAttribute('data-info')) {
-        return;
+    for (let i = 0; i < cardsFromDB.length; i++) {
+        const positionPDB = cardsFromDB[i].querySelectorAll('p')[1];
+        if(positionPDB.textContent === position){
+            positionPDB.parentElement.parentElement.classList.remove("hidden");
+        }
     }
-
-    cards = event.currentTarget;
-    form2.setAttribute('class', 'm-5 md:w-[50%] w-[70%] absolute top-10 ease-in-out duration-300 left-[25%] md:left-[30%]')
+    modal.classList.remove("hidden")
 }
+function appendInStadium(e){
+    const cardsDB = e.currentTarget;
+    console.log(cardsDB);
+    cardsDB.classList.remove("cardsFromDB");
+    
+    RW.appendChild(cardsDB);
+    RW.children[0].classList.add("hidden");
+    modal.classList.add("hidden");
 
-function fermer(){
-    form1.setAttribute('class', 'm-5 md:w-[20%] w-full absolute -top-[1000px] ease-in-out duration-300 left-[30%]')
-    form2.setAttribute('class', 'm-5 md:w-[20%] w-full absolute -top-[1000px] ease-in-out duration-300 left-[30%]');
-    myForm1.reset();
-    myForm.reset();
+}
+window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        modal.classList.add("hidden");
+        cardsFromDB.forEach(card => card.classList.add("hidden"));
+    }
+});
+closeButton.addEventListener("click", () => {
+    modal.classList.add("hidden");
+    cardsFromDB.forEach(card => card.classList.add("hidden"));
+});
+function cardPlayer(event){
+    cards = event.currentTarget
 }
 
 //changement 

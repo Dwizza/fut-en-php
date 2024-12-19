@@ -133,7 +133,7 @@ include 'database.php';
             <form class="flex flex-col justify-center items-center gap-5 mt-5" method="post">
                 <div class="grid grid-cols-2 gap-3 w-full">
                     <label for="">Name<input type="text" name="name" class="focus:border-b-green-500 border-b-2 outline-none text-black w-full"></label>
-                    <label for="">Photo<input type="file" name="photo" class="focus:border-b-green-500 border-b-2 outline-none text-black w-full"></label>
+                    <label for="">Photo<input type="url" name="photo" class="focus:border-b-green-500 border-b-2 outline-none text-black w-full"></label>
                     <label for="">Position
                     <select name="position" id="" class="focus:border-b-green-500 border-b-2 outline-none text-black w-full">
                         <option value="">Choisir..</option>
@@ -141,8 +141,8 @@ include 'database.php';
                         <option value="RW">RW</option>
                         <option value="LW">LW</option>
                         <option value="CAM">CAM</option>
-                        <option value="CM">CM</option>
                         <option value="CDM">CDM</option>
+                        <option value="CM">CM</option>
                         <option value="RB">RB</option>
                         <option value="LB">LB</option>
                         <option value="CB1">CB1</option>
