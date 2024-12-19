@@ -3,12 +3,12 @@ let cardsFromDB = document.querySelectorAll('.cardsFromDB');
 const modal = document.getElementById("modal");
 const openButton = document.getElementById("openButton");
 const closeButton = document.getElementById("closeButton");
-const RW = document.getElementById("RW");
+let position = null;
 
 
 function cardPlayers(event){
     cards = event.currentTarget;
-    const position = cards.querySelectorAll('p')[1].textContent;
+    position = cards.querySelectorAll('p')[1].textContent;
     
     for (let i = 0; i < cardsFromDB.length; i++) {
         const positionPDB = cardsFromDB[i].querySelectorAll('p')[1];
@@ -20,11 +20,12 @@ function cardPlayers(event){
 }
 function appendInStadium(e){
     const cardsDB = e.currentTarget;
-    console.log(cardsDB);
     cardsDB.classList.remove("cardsFromDB");
+    console.log(position);
+    const div = document.getElementById(`${position}`);
     
-    RW.appendChild(cardsDB);
-    RW.children[0].classList.add("hidden");
+    div.appendChild(cardsDB);
+    div.children[0].classList.add("hidden");
     modal.classList.add("hidden");
 
 }

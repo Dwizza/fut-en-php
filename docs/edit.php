@@ -37,8 +37,13 @@ include 'database.php';
                         </a>
                     </li>
                     <li class="hover:bg-zinc-600 px-4 py-2">
-                        <a href="index2.php">
+                        <a href="nationality.php">
                             <p>Nationality</p>
+                        </a>
+                    </li>
+                    <li class="hover:bg-zinc-600 px-4 py-2">
+                        <a href="club.php">
+                            <p>Club</p>
                         </a>
                     </li>
                 </ul>
@@ -78,8 +83,9 @@ include 'database.php';
                         $nationality = "SELECT * FROM nationality";
                         $resultNationality = mysqli_query($conn, $nationality);
                         while($rowNationality = mysqli_fetch_assoc($resultNationality)){
-                            echo '<option value="'.$rowNationality['id_nationality'].'">'.$rowNationality['nationality_name'].'</option>';
-                            if($rowNationality['id_nationality'] == $rowEdit['id_nationality']){
+                            if($rowNationality['id_nationality'] != $rowEdit['id_nationality']){
+                                echo '<option value="'.$rowNationality['id_nationality'].'">'.$rowNationality['nationality_name'].'</option>';
+                            }else{
                                 echo '<option selected value="'.$rowNationality['id_nationality'].'">'.$rowNationality['nationality_name'].'</option>';
                             }
                         }
@@ -93,8 +99,9 @@ include 'database.php';
                         $resultClub = mysqli_query($conn, $club);
 
                         while($rowClub = mysqli_fetch_assoc($resultClub)){
-                            echo '<option value="'.$rowClub['id_club'].'">'.$rowClub['club_name'].'</option>';
-                            if($rowClub['id_club'] == $rowEdit['id_club']){
+                            if($rowClub['id_club'] != $rowEdit['id_club']){
+                                echo '<option value="'.$rowClub['id_club'].'">'.$rowClub['club_name'].'</option>';
+                            }else{
                                 echo '<option selected value="'.$rowClub['id_club'].'">'.$rowClub['club_name'].'</option>';
                             }
                         }
