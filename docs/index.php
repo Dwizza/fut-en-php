@@ -197,7 +197,7 @@ include 'database.php';
 <!-- card end  -->
 <div id="modal" class="fixed inset-0 bg-stone-950 bg-opacity-70 hidden justify-center items-center">
     <div class="bg-[#404040] px-6 py-3 flex flex-col w-[500px] gap-4 rounded-lg fixed left-[500px] top-[100px]" >
-        <button id="closeButton" class="absolute top-2 right-2 text-red-500 font-bold"><i class="fa-solid fa-circle-xmark"></i></button>
+        <button id="closeButton" class="absolute top-1 right-2 text-red-500 font-bold"><i class="fa-solid fa-circle-xmark"></i></button>
         <div class="grid grid-cols-3 justify-items-center gap-2">
             <?php
             $playerAdd = "SELECT * FROM player 
@@ -240,6 +240,60 @@ include 'database.php';
                                         <div class=\"flex flex-col items-center justify-center\">
                                             <p>PHY</p>
                                             <p>".$rowAdd[$i]['physical']."</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class=\"flex absolute gap-1 flex-col top-6 right-2\">
+                                    <div class=\"\">
+                                        <img src=\"".$rowAdd[$i]['photoNation']."\" alt=\"\" class=\"w-5\">
+                                    </div>
+                                    <div class=\"\">
+                                        <img src=\"".$rowAdd[$i]['photoClub']."\" alt=\"\" class=\"w-5\">
+                                    </div>
+                                </div>
+                            </div>";
+            }
+            $playerAdd = "SELECT * FROM GK 
+                        NATURAL JOIN nationality 
+                        NATURAL JOIN club;";
+            $resultAdd = mysqli_query($conn, $playerAdd);
+            $rowAdd = $resultAdd->fetch_all(1);
+
+            for($i = 0; $i < count($rowAdd);$i++){
+                echo "<div onclick=\"appendInStadium(event)\" class=\"relative hidden md:w-28 w-24 h-[9.7rem] cursor-pointer hover:[filter:drop-shadow(0px_0px_30px#F7E7C3)] cardsFromDB\" onclick=\"cardPlayers(event)\">
+                                <img src=\"../images/badge_gold.png\" alt=\"\" class=\"object-contain h-full w-full\">
+                                <div class=\"absolute w-[60%] top-8 left-5\" ><img src=\"".$rowAdd[$i]['photo']."\" alt=\"\"></div>
+                                <div class=\"flex flex-col items-center text-sm justify-center absolute top-5 left-1\">
+                                    <p>".$rowAdd[$i]['rating']."</p>
+                                    <p>" .$rowAdd[$i]['position']."</p>
+                                </div>
+                                <div class=\" flex flex-col absolute md:bottom-3 md:-left-0 bottom-5 -left-0\" >
+                                    <div class=\"text-center\"><p>".$rowAdd[$i]['name']."</p></div>
+                                    <div class=\"flex gap-1 justify-center items-center w-24 text-[0.4em] md:w-28 md:text-[0.5em]\">
+                                        <div class=\"flex flex-col items-center justify-center\">
+                                            <p>DIV</p>
+                                            <p>".$rowAdd[$i]['diving']."</p>
+                                        </div>
+                                        <div class=\"flex flex-col items-center justify-center\">
+                                            <p>HDL</p>
+                                            <p>".$rowAdd[$i]['handling']."</p>
+                                        </div>
+                                        <div class=\"flex flex-col items-center justify-center\">
+                                            <p>KIC</p>
+                                            <p>".$rowAdd[$i]['kicking']."</p>
+                                        </div>
+                                        <div class=\"flex flex-col items-center justify-center\">
+                                            <p>REF</p>
+                                            <p>".$rowAdd[$i]['reflexes']."</p>
+                                        </div>
+                                        <div class=\"flex flex-col items-center justify-center\">
+                                            <p>SPD</p>
+                                            <p>".$rowAdd[$i]['speed']."</p>
+                                        </div>
+                                        <div class=\"flex flex-col items-center justify-center\">
+                                            <p>POS</p>
+                                            <p>".$rowAdd[$i]['positioning']."</p>
                                         </div>
                                     </div>
 

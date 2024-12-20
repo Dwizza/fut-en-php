@@ -4,6 +4,7 @@ const modal = document.getElementById("modal");
 const openButton = document.getElementById("openButton");
 const closeButton = document.getElementById("closeButton");
 let position = null;
+let positionPDB = null ;
 
 
 function cardPlayers(event){
@@ -11,7 +12,7 @@ function cardPlayers(event){
     position = cards.querySelectorAll('p')[1].textContent;
     
     for (let i = 0; i < cardsFromDB.length; i++) {
-        const positionPDB = cardsFromDB[i].querySelectorAll('p')[1];
+        positionPDB = cardsFromDB[i].querySelectorAll('p')[1];
         if(positionPDB.textContent === position){
             positionPDB.parentElement.parentElement.classList.remove("hidden");
         }
@@ -21,9 +22,12 @@ function cardPlayers(event){
 function appendInStadium(e){
     const cardsDB = e.currentTarget;
     cardsDB.classList.remove("cardsFromDB");
-    console.log(position);
     const div = document.getElementById(`${position}`);
-    
+    for(let i = 0; i < cardsFromDB.length;i++){
+        
+        cardsFromDB[i].classList.add("hidden");
+        console.log(cardsFromDB.length);
+    }   
     div.appendChild(cardsDB);
     div.children[0].classList.add("hidden");
     modal.classList.add("hidden");
